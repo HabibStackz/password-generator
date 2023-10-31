@@ -94,6 +94,14 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// Global variables
+var isLowerCase;
+var isUpperCase;
+var isNumeric;
+var isSpecial;
+var passwordLength;
+var characters;
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   // get password length, convert to integer and check if it meets lower & upper bound criteria
