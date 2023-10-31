@@ -129,10 +129,9 @@ function getPasswordOptions() {
   }
 }
 
-
 // Function for getting a random element from an array
 function getRandom(arr) {
-  const randomIndex = math.floor(math.random() * arrLength);
+  const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex]
 }
 
@@ -140,6 +139,39 @@ function getRandom(arr) {
 function generatePassword() {
   getPasswordOptions()
 
+  // characters to be created based on user input
+  var characters = '';
+
+  // select characters from array based on user preferences for chars
+  if(isLowerCase){
+    characters += lowerCasedCharacters.join('');
+  }
+  if(isUpperCase){
+    characters += upperCasedCharacters.join('');
+  }
+  if(isNumeric){
+    characters += numericCharacters.join('');
+  }
+  if(isSpecial){
+    characters += specialCharacters.join('');
+  }
+
+  // throw an alert if users do not select any type of characters
+  if (!characters) {
+    return "No character types selected. please try again";
+  }
+
+  // create a variable to hold the password to be generated from selecting random characters
+  var password = '';
+
+  // create a for loop to randomly select characters up to the length of the password length selected by the user
+  for(var i = 0; i < passwordLength; i++){
+    var randomCharacters = getRandom(characters);
+    password += randomCharacters;
+  }
+  
+  // display password
+  return password;
 }
 
 // Get references to the #generate element
