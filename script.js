@@ -1,8 +1,8 @@
-  // issue a prompt asking for password length and store it in a variable
-  // user enters length and we use the method parseToInt to change data type to number
-  // check if the length is between 8 and 128 characters before proceeding
-  // if length is more than 8 and less than 128, prompt user for character types
-  // ask user to confirm if password should contain Lowercase, Uppercase, numbers and special characters
+// issue a prompt asking for password length and store it in a variable
+// user enters length and we use the method parseToInt to change data type to number
+// check if the length is between 8 and 128 characters before proceeding
+// if length is more than 8 and less than 128, prompt user for character types
+// ask user to confirm if password should contain Lowercase, Uppercase, numbers and special characters
 
 // Array of special characters to be included in password
 var specialCharacters = [
@@ -96,21 +96,31 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-// get password length, convert to integer and check if it meets lower & upper bound criteria
-  var passwordLength = parseInt(prompt ("How many characters do you want your password to be?"));
-  if(isNaN(passwordLength)){
-    alert("please enter a valid integer")
-  } else{
-    if (passwordLength < 8 || passwordLength > 128) {
-      alert("Password length must be more than 8 characters and less than 128 characters")
-    }
+  // get password length, convert to integer and check if it meets lower & upper bound criteria
+  passwordLength = parseInt(prompt("How many characters do you want your password to be?"));
+  if (isNaN(passwordLength)) {
+    return alert("please enter a valid integer");
+  } else if (passwordLength < 8 || passwordLength > 128) {
+    return alert("Password length must be more than 8 characters and less than 128 characters");
+  } else {
+    // confirm character types
+    isLowerCase = confirm(
+      "Do you want your password to include lowercase characters?");
+    isUpperCase = confirm(
+      "Do you want your password to include uppercase characters?");
+    isNumeric = confirm(
+      "Do you want your password to include numeric characters?");
+    isSpecial = confirm(
+      "Do you want your password to include special characters?");
   }
 
+  // Check that at least one character type is selected and handle exception if any byr returning an alert
 
-  
-
-
+  if (!isLowerCase && !isUpperCase && !isNumeric && !isSpecial) {
+    return alert("Please select at least one character type for your password.");
+  }
 }
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
