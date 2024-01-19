@@ -4,10 +4,23 @@ A simple JavaScript-based password generator that allows users to customize the 
 
 ## Table of Contents
 
+- [Description](#description)
+- [Link](#link)
+- [Screenshot](#screenshot)
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [How it Works](#how-it-works)
 - [License](#license)
+
+## Description
+This Password Generator is a JavaScript-based tool that allows users to generate secure and random passwords based on their preferences. Users can specify the length of the password and choose whether to include lowercase characters, uppercase characters, numeric characters, and special characters.
+
+## Link
+https://habibstackz.github.io/password-generator
+
+## Screenshot
+![Screenshot 2024-01-19 213745](https://github.com/HabibStackz/password-generator/assets/105345889/4d2d1de7-dc51-49cc-b689-36ca942265dd)
+
 
 ## Features
 
